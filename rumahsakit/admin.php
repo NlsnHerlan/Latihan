@@ -18,4 +18,5 @@ session_start();
 if(!isset($_SESSION["username"])){
     header("Location:login.php");
 }
-echo "<a href='beranda.php'>Ke Beranda</a>";
+echo "<a href='beranda.php'>Ke Beranda Admin</a>";
+echo "<br>";
