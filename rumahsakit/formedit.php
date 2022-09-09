@@ -10,18 +10,30 @@
     <h1>EDIT DATA</h1>
     <form action="edit.php" method="post">
         <div>
-            <label>Nama</label>
-            <input type="text" name="nama">
+            <label>Username</label>
+            <input type="text" name="username">
         </div>
+        <br>
         <div>
-            <label>Kelas</label>
-            <select name="kelas" id="">
-                <option value="1">12 RPL</option>
-                <option value="2">11 RPL</option>
-            </select>
+            <label>Password</label>
+            <input type="text" name="password">
+        </div>
+        <br>
+        <div>
+            <label>Role</label>
+            <input type="text" name="role">
            
         </div>
         <input type="submit" value="simpan">
-    </from>
+    </form>
     </body>
 </html>
+
+<?php
+
+session_start();
+
+if(!isset($_SESSION["username"])){
+    header("Location:login.php");
+}
+?>

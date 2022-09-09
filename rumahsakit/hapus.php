@@ -7,5 +7,5 @@
 
     
     if($query){
-        header("Location:index.php");
+        header("Location:beranda.php");
     }
