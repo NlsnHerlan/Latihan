@@ -1,3 +1,13 @@
+<?php
+$id = $_GET['id'];
+
+$koneksi = new PDO("mysql:host=localhost;dbname=rumahsakit",'root','');
+$query = $koneksi->query("select * from user where id='$id'");
+
+$data=$query->fetch();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,18 +21,20 @@
     <form action="edit.php" method="post">
         <div>
             <label>Username</label>
-            <input type="text" name="username">
+            <input type="text" name="username" value='<?php echo $data['username']?>'>
         </div>
         <br>
         <div>
             <label>Password</label>
-            <input type="text" name="password">
+            <input type="text" name="password" value='<?php echo $data['password']?>'>
         </div>
         <br>
         <div>
             <label>Role</label>
-            <input type="text" name="role">
-           
+            <input type="text" name="role" value='<?php echo $data['role']?>'>
+        </div>
+        <div>
+            <input type="hidden" name="id" value='<?php echo $data['id']?>'>
         </div>
         <input type="submit" value="simpan">
     </form>
