@@ -9,15 +9,14 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <h1 style="text-align:center;">Ini Beranda User</h1>
+    <h1 style="text-align:center;">Ini Beranda Siswa</h1>
     <br>
     
     <table border="1" cellpadding="10" cellspacing="0" class="table-primary table-striped">
     <tr>
-        
-        <th>Username</th>
-        <th>Password</th>
-        <th>Role</th>
+        <th>Nis</th>
+        <th>Nama</th>
+        <th>Kelas</th>
     </tr>
 
 </body>
@@ -28,10 +27,10 @@
 session_start();
 
 
-if(!isset($_SESSION["username"])){
+if(!isset($_SESSION["nama"])){
     header("Location:login.php");
 }
-echo "<a href='admin.php'>Kembali</a>";
+echo "<a href='siswa.php'>Kembali</a>";
 echo "<br>";
 echo "<a href='logout.php'>Logout</a>";
 
@@ -41,9 +40,9 @@ $koneksi = new PDO("mysql:host=localhost;dbname=rumahsakit",'root','');
  while ($data = $query->fetch() ) :?>
 <tr  style="text-align:center;" >
     
-    <td><?= $data['username']?></td>
-    <td><?= $data['password']?></td>
-    <td><?= $data['role']?></td>
+    <td><?= $data['nis']?></td>
+    <td><?= $data['nama']?></td>
+    <td><?= $data['kelas']?></td>
 
             
     </tr>

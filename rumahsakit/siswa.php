@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>USER</h1>
+    <h1>SISWA</h1>
 </body>
 </html>
 
@@ -18,5 +18,4 @@ session_start();
 if(!isset($_SESSION["nama"])){
     header("Location:login.php");
 }
-echo "<a href='beranda.php'>Ke Beranda User</a>";
-echo "<br>";
+echo "<a href='berandauser.php'>Ke Beranda Siswa</a>";

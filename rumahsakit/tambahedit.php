@@ -1,5 +1,11 @@
 <?php
-    
+
+session_start();
+
+if(!isset($_SESSION["nama"])){
+    header("Location:login.php");
+}
+echo "<a  href='beranda.php'>Kembali</a>" ;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,20 +17,26 @@
 </head>
 <body>
     <h1>INPUT DATA</h1>
-    <form action="tambah.php" method="post">
+   
+    <form action="tambah.php" method="post" >
         <div>
-            <label>Username</label>
-            <input type="text" name="username">
+            <label>Nis</label>
+            <input type="text" id="nis" name="nis" required >
+        </div>
+        <br>
+        <div>
+            <label>Nama</label>
+            <input type="text" id="nama" name="nama" required>
         </div>
         <br>
         <div>
             <label>Password</label>
-            <input type="text" name="password">
+            <input type="text" id="password" name="password" required>
         </div>
         <br>
         <div>
-            <label>Role</label>
-            <input type="text" name="role">
+            <label>Kelas</label>
+            <input type="text" id="kelas" name="kelas" required>
            
         </div>
         <input type="submit" value="simpan">
@@ -32,11 +44,3 @@
 </body>
 </html>
 
-<?php
-
-session_start();
-
-if(!isset($_SESSION["username"])){
-    header("Location:login.php");
-}
-?>

@@ -1,5 +1,5 @@
 <?php
     session_start();
 
-    $koneksi = new PDO("mysql:host=localhost;dbname=rumahsakit;","root","");
+    $koneksi = new PDO("mysql:host=localhost;dbname=rumahsakit;",'root','');
 ?>

@@ -1,12 +1,12 @@
 <?php
-
-    $username = $_POST['username'];
+    $nis = $_POST['nis'];
+    $nama = $_POST['nama'];
     $password = $_POST['password'];
-    $role = $_POST['role'];
+    $kelas = $_POST['kelas'];
     $id = $_POST['id'];
 
     $database = new PDO("mysql:host=localhost;dbname=rumahsakit",'root','');
-    $query = $database->query("update user set username='$username',password='$password',role='$role 'where id='$id'");
+    $query = $database->query("update user set nama='$nama',password='$password',kelas='$kelas', nis='$nis' where id='$id'");
 
     
     if($query){
